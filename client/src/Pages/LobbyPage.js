@@ -12,7 +12,7 @@ const LobbyPage = ({socket}) => {
     let data;
     useEffect(()=>{
       
-        fetch('homeassignmentserver-production.up.railway.app/lobby')
+        fetch('http://localhost:5000/lobby')
         .then(response =>  response.json())
         .then(data => setDataObject(data)) 
         .catch(error => console.error('Error fetching code blocks:', error));

@@ -4,7 +4,6 @@ import io from 'socket.io-client';
 import { useState,useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './CodeBlockPage.css';
-import MonacoEditor from 'react-monaco-editor';
 import Editor from '@monaco-editor/react';
 
 
@@ -21,7 +20,7 @@ function CodeBlockPage({socket}) {
   
   useEffect(()=>{ 
     console.log(`${id}`);
-    fetch(`homeassignmentserver-production.up.railway.app/codeblock/${id}`)
+    fetch(`http://localhost:5000/codeblock/${id}`)
     .then(response => response.json())
     .then(data => setDataObject(data)) 
     .catch(error => console.error('Error fetching code blocks:', error));
