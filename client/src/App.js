@@ -6,7 +6,7 @@ import LobbyPage from './Pages/LobbyPage';
 import CodeBlockPage from './Pages/CodeBlockPage';
 
 
-const socket = io.connect('http://localhost:5000');
+const socket = io.connect('https://homeassignmentserver-production.up.railway.app');
 
 function App() {
 

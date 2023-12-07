@@ -18,7 +18,7 @@ function CodeBlockPage({socket}) {
   
   useEffect(()=>{ 
     console.log(`${id}`);
-    fetch(`http://localhost:5000/codeblock/${id}`)
+    fetch(`https://homeassignmentserver-production.up.railway.app/codeblock/${id}`)
     .then(response => response.json())
     .then(data => setDataObject(data)) 
     .catch(error => console.error('Error fetching code blocks:', error));
@@ -36,7 +36,7 @@ function CodeBlockPage({socket}) {
     
     
     
-  },[]);
+  },[id, socket]);
     
   socket.on('code-received',(code)=>{
     setCodeReceived(code);
@@ -45,7 +45,7 @@ function CodeBlockPage({socket}) {
   
   useEffect(()=>{
     socket.emit('code-update',{ code ,id});
-  },[code]);
+  },[code, id, socket]);
 
   //using monaco editor
   return (
