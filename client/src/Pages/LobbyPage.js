@@ -7,7 +7,7 @@ import { useEffect,useState } from 'react';
 
 const LobbyPage = ({socket}) => {
    const [dataObject,setDataObject]=useState([]);
-    let data;
+    
     useEffect(()=>{
       
         fetch('https://homeassignmentserver-production.up.railway.app/lobby')
